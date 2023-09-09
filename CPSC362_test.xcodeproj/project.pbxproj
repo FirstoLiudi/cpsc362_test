@@ -30,6 +30,9 @@
 		9ACE6CA02AA415A5001AF0D0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE6C9F2AA415A5001AF0D0 /* LoginView.swift */; };
 		9AF1254D2AA46FC8004A2D77 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF1254C2AA46FC7004A2D77 /* TestView.swift */; };
 		9AF1254F2AA47CAB004A2D77 /* TestViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF1254E2AA47CAB004A2D77 /* TestViewViewModel.swift */; };
+		9AF337972AAC8C320008956A /* TransactionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF337962AAC8C320008956A /* TransactionItemView.swift */; };
+		9AF337992AAC8CD80008956A /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF337982AAC8CD80008956A /* Transaction.swift */; };
+		9AF3379B2AAC93D70008956A /* TransactionsViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3379A2AAC93D70008956A /* TransactionsViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,9 @@
 		9ACE6C9F2AA415A5001AF0D0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9AF1254C2AA46FC7004A2D77 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		9AF1254E2AA47CAB004A2D77 /* TestViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewViewModel.swift; sourceTree = "<group>"; };
+		9AF337962AAC8C320008956A /* TransactionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionItemView.swift; sourceTree = "<group>"; };
+		9AF337982AAC8CD80008956A /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		9AF3379A2AAC93D70008956A /* TransactionsViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,9 @@
 				9A1034212AA3AF8A00A02E95 /* BudgetView.swift */,
 				9A10341D2AA3ACB800A02E95 /* SettingsView.swift */,
 				9A10341F2AA3AD0300A02E95 /* TransactionsView.swift */,
+				9AF3379A2AAC93D70008956A /* TransactionsViewViewModel.swift */,
+				9AF337962AAC8C320008956A /* TransactionItemView.swift */,
+				9AF337982AAC8CD80008956A /* Transaction.swift */,
 				9A4A9E982AAC34BF00065432 /* AddTransactionView.swift */,
 				9A4A9E9A2AAC364F00065432 /* AddTransactionViewViewModel.swift */,
 				9A1033F72AA3AC6F00A02E95 /* Assets.xcassets */,
@@ -313,10 +322,13 @@
 			files = (
 				9ACE6C9E2AA40610001AF0D0 /* SignupView.swift in Sources */,
 				9A4A9E9D2AAC472000065432 /* MainView.swift in Sources */,
+				9AF337992AAC8CD80008956A /* Transaction.swift in Sources */,
 				9AF1254F2AA47CAB004A2D77 /* TestViewViewModel.swift in Sources */,
 				9ACE6CA02AA415A5001AF0D0 /* LoginView.swift in Sources */,
 				9A10341E2AA3ACB800A02E95 /* SettingsView.swift in Sources */,
+				9AF3379B2AAC93D70008956A /* TransactionsViewViewModel.swift in Sources */,
 				9A4A9E9B2AAC364F00065432 /* AddTransactionViewViewModel.swift in Sources */,
+				9AF337972AAC8C320008956A /* TransactionItemView.swift in Sources */,
 				9A4A9E9F2AAC4B2D00065432 /* LoginViewViewModel.swift in Sources */,
 				9A1034202AA3AD0300A02E95 /* TransactionsView.swift in Sources */,
 				9AF1254D2AA46FC8004A2D77 /* TestView.swift in Sources */,

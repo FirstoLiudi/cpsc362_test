@@ -20,7 +20,7 @@ struct SignupView: View {
             
             Button(action: {
                 // Simulate signup success for demonstration purposes
-                viewModel.signin()
+                viewModel.signup()
             }) {
                 Text("Sign Up")
                     .foregroundColor(.white)
