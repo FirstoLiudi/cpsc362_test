@@ -16,7 +16,7 @@ class SignupViewViewModel: ObservableObject{
     
     init(){}
     
-    func signin(){
+    func signup(){
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
             if let error = error {
                 // Handle the error (e.g., display an error message)

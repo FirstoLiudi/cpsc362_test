@@ -33,7 +33,7 @@ struct LoginView: View {
                 NavigationLink("Need an account? Sign in", destination: SignupView())
                 
                 if viewModel.isError {
-                    Text(viewModel.errorMsg)
+                    Text(viewModel.message)
                         .multilineTextAlignment(.center)
                         .padding()
                         .foregroundColor(.red)

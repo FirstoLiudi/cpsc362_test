@@ -12,7 +12,7 @@ class LoginViewViewModel: ObservableObject{
     @Published var email:String=""
     @Published var password:String=""
     @Published var isError:Bool=false
-    @Published var errorMsg:String=""
+    @Published var message:String=""
     
     init(){}
     
@@ -21,7 +21,7 @@ class LoginViewViewModel: ObservableObject{
             if let error = error {
                 // Handle the error (e.g., display an error message)
                 self.isError=true
-                self.errorMsg=error.localizedDescription
+                self.message=error.localizedDescription
                 print("Error signing in: \(error.localizedDescription)")
             } else if let user = authResult?.user {
                 // User signed in successfully
