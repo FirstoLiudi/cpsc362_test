@@ -8,57 +8,36 @@ import SwiftUI
 import FirebaseAuth
 
 struct SignupView: View {
-    @State private var email = ""
-    @State private var password = ""
-    @State private var isError = false
+    @StateObject var viewModel=SignupViewViewModel()
     
     var body: some View {
-        NavigationView {
-            VStack {
+        VStack {
+            TextField("Email", text: $viewModel.email)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            
+            SecureField("Password", text: $viewModel.password)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            
+            Button(action: {
+                // Simulate signup success for demonstration purposes
+                viewModel.signin()
+            }) {
                 Text("Sign Up")
-                    .font(.largeTitle)
-                    .padding(.bottom, 20)
-                
-                TextField("Email", text: $email)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                
-                SecureField("Password", text: $password)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                
-                Button(action: {
-                    // Simulate signup success for demonstration purposes
-                    Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
-                        if let error = error {
-                            // Handle the error (e.g., display an error message)
-                            isError=true
-                            print("Error creating user: \(error.localizedDescription)")
-                        } else if let user = authResult?.user {
-                            // User account was successfully created
-                            print("User created: \(user.uid)")
-                        }
-                    }
-                }) {
-                    Text("Sign Up")
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                }
-                
-                if isError {
-                    Text("Sign-up successful!\nEmail: \(email)\nPassword: \(password)")
-                        .multilineTextAlignment(.center)
-                        .padding()
-                        .foregroundColor(.green)
-                    
-                }
-                
-                Spacer()
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.blue)
+                    .cornerRadius(10)
             }
-            .padding()
-            .navigationBarTitle("", displayMode: .inline)
+            Text(viewModel.message)
+                .multilineTextAlignment(.center)
+                .padding()
+                .foregroundColor(viewModel.isError ? .red : .green)
+            
+            Spacer()
         }
+        .padding()
+        .navigationTitle("Sign Up")
     }
 }
 

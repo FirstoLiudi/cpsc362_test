@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9A1033F42AA3AC6E00A02E95 /* CPSC362_testApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1033F32AA3AC6E00A02E95 /* CPSC362_testApp.swift */; };
-		9A1033F62AA3AC6E00A02E95 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1033F52AA3AC6E00A02E95 /* ContentView.swift */; };
+		9A1033F62AA3AC6E00A02E95 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1033F52AA3AC6E00A02E95 /* HomeView.swift */; };
 		9A1033F82AA3AC6F00A02E95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A1033F72AA3AC6F00A02E95 /* Assets.xcassets */; };
 		9A1033FB2AA3AC6F00A02E95 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A1033FA2AA3AC6F00A02E95 /* Preview Assets.xcassets */; };
 		9A1034052AA3AC7000A02E95 /* CPSC362_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1034042AA3AC7000A02E95 /* CPSC362_testTests.swift */; };
@@ -19,6 +19,9 @@
 		9A1034222AA3AF8A00A02E95 /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1034212AA3AF8A00A02E95 /* BudgetView.swift */; };
 		9A4A9E992AAC34BF00065432 /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A9E982AAC34BF00065432 /* AddTransactionView.swift */; };
 		9A4A9E9B2AAC364F00065432 /* AddTransactionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A9E9A2AAC364F00065432 /* AddTransactionViewViewModel.swift */; };
+		9A4A9E9D2AAC472000065432 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A9E9C2AAC472000065432 /* MainView.swift */; };
+		9A4A9E9F2AAC4B2D00065432 /* LoginViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A9E9E2AAC4B2D00065432 /* LoginViewViewModel.swift */; };
+		9A4A9EA12AAC4EC300065432 /* SignupViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A9EA02AAC4EC300065432 /* SignupViewViewModel.swift */; };
 		9ACE6C952AA40311001AF0D0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9ACE6C942AA40311001AF0D0 /* GoogleService-Info.plist */; };
 		9ACE6C982AA403EF001AF0D0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9ACE6C972AA403EF001AF0D0 /* FirebaseAuth */; };
 		9ACE6C9A2AA403EF001AF0D0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9ACE6C992AA403EF001AF0D0 /* FirebaseFirestore */; };
@@ -49,7 +52,7 @@
 /* Begin PBXFileReference section */
 		9A1033F02AA3AC6E00A02E95 /* CPSC362_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPSC362_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A1033F32AA3AC6E00A02E95 /* CPSC362_testApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPSC362_testApp.swift; sourceTree = "<group>"; };
-		9A1033F52AA3AC6E00A02E95 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9A1033F52AA3AC6E00A02E95 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9A1033F72AA3AC6F00A02E95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A1033FA2AA3AC6F00A02E95 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9A1034002AA3AC7000A02E95 /* CPSC362_testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CPSC362_testTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +65,9 @@
 		9A1034212AA3AF8A00A02E95 /* BudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
 		9A4A9E982AAC34BF00065432 /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
 		9A4A9E9A2AAC364F00065432 /* AddTransactionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewViewModel.swift; sourceTree = "<group>"; };
+		9A4A9E9C2AAC472000065432 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		9A4A9E9E2AAC4B2D00065432 /* LoginViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewViewModel.swift; sourceTree = "<group>"; };
+		9A4A9EA02AAC4EC300065432 /* SignupViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewViewModel.swift; sourceTree = "<group>"; };
 		9ACE6C942AA40311001AF0D0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9ACE6C9D2AA40610001AF0D0 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		9ACE6C9F2AA415A5001AF0D0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -122,9 +128,12 @@
 			children = (
 				9ACE6C942AA40311001AF0D0 /* GoogleService-Info.plist */,
 				9A1033F32AA3AC6E00A02E95 /* CPSC362_testApp.swift */,
-				9A1033F52AA3AC6E00A02E95 /* ContentView.swift */,
+				9A4A9E9C2AAC472000065432 /* MainView.swift */,
+				9A1033F52AA3AC6E00A02E95 /* HomeView.swift */,
 				9ACE6C9D2AA40610001AF0D0 /* SignupView.swift */,
+				9A4A9EA02AAC4EC300065432 /* SignupViewViewModel.swift */,
 				9ACE6C9F2AA415A5001AF0D0 /* LoginView.swift */,
+				9A4A9E9E2AAC4B2D00065432 /* LoginViewViewModel.swift */,
 				9A1034212AA3AF8A00A02E95 /* BudgetView.swift */,
 				9A10341D2AA3ACB800A02E95 /* SettingsView.swift */,
 				9A10341F2AA3AD0300A02E95 /* TransactionsView.swift */,
@@ -303,13 +312,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9ACE6C9E2AA40610001AF0D0 /* SignupView.swift in Sources */,
+				9A4A9E9D2AAC472000065432 /* MainView.swift in Sources */,
 				9AF1254F2AA47CAB004A2D77 /* TestViewViewModel.swift in Sources */,
 				9ACE6CA02AA415A5001AF0D0 /* LoginView.swift in Sources */,
 				9A10341E2AA3ACB800A02E95 /* SettingsView.swift in Sources */,
 				9A4A9E9B2AAC364F00065432 /* AddTransactionViewViewModel.swift in Sources */,
+				9A4A9E9F2AAC4B2D00065432 /* LoginViewViewModel.swift in Sources */,
 				9A1034202AA3AD0300A02E95 /* TransactionsView.swift in Sources */,
 				9AF1254D2AA46FC8004A2D77 /* TestView.swift in Sources */,
-				9A1033F62AA3AC6E00A02E95 /* ContentView.swift in Sources */,
+				9A4A9EA12AAC4EC300065432 /* SignupViewViewModel.swift in Sources */,
+				9A1033F62AA3AC6E00A02E95 /* HomeView.swift in Sources */,
 				9A1033F42AA3AC6E00A02E95 /* CPSC362_testApp.swift in Sources */,
 				9A1034222AA3AF8A00A02E95 /* BudgetView.swift in Sources */,
 				9A4A9E992AAC34BF00065432 /* AddTransactionView.swift in Sources */,

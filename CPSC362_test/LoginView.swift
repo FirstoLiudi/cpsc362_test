@@ -9,35 +9,19 @@ import SwiftUI
 import FirebaseAuth
 
 struct LoginView: View {
-    @State private var email = ""
-    @State private var password = ""
-    @State private var isError = false
+    @StateObject var viewModel=LoginViewViewModel()
     
     var body: some View {
         NavigationView {
             VStack {
-                Text("Login")
-                    .font(.largeTitle)
-                    .padding(.bottom, 20)
-                
-                TextField("Email", text: $email)
+                TextField("Email", text: $viewModel.email)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 
-                SecureField("Password", text: $password)
+                SecureField("Password", text: $viewModel.password)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 
                 Button(action: {
-                    // Simulate signup success for demonstration purposes
-                    Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
-                        if let error = error {
-                            // Handle the error (e.g., display an error message)
-                            isError=true
-                            print("Error signing in: \(error.localizedDescription)")
-                        } else if let user = authResult?.user {
-                            // User signed in successfully
-                            print("User signed in: \(user.uid)")
-                        }
-                    }
+                    viewModel.login()
                 }) {
                     Text("Sign Up")
                         .foregroundColor(.white)
@@ -46,19 +30,19 @@ struct LoginView: View {
                         .background(Color.blue)
                         .cornerRadius(10)
                 }
+                NavigationLink("Need an account? Sign in", destination: SignupView())
                 
-                if isError {
-                    Text("Sign-up successful!\nEmail: \(email)\nPassword: \(password)")
+                if viewModel.isError {
+                    Text(viewModel.errorMsg)
                         .multilineTextAlignment(.center)
                         .padding()
-                        .foregroundColor(.green)
-                    
+                        .foregroundColor(.red)
                 }
                 
                 Spacer()
             }
             .padding()
-            .navigationBarTitle("", displayMode: .inline)
+            .navigationTitle("Login")
         }
     }
 }
