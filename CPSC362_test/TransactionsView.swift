@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-struct AddTransactionView: View{
-    var body: some View{
-        Text("Add Transaction Form")
-    }
-}
-
 struct TransactionsView: View {
     var body: some View {
         NavigationView(){
