@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct TransactionsView: View {
+    @StateObject var viewModel=TransactionsViewViewModel()
     var body: some View {
         NavigationView(){
             VStack{
-                Text("list of transactions")
+                ForEach<[Transaction], Transaction, Any>(viewModel.transactions, id:\<#Root#>.self)
             }
             .toolbar{
                 NavigationLink( destination: AddTransactionView()){
                     Text("add transaction")
                 }
-                
             }
         }
     }
