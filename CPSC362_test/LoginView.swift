@@ -23,7 +23,7 @@ struct LoginView: View {
                 Button(action: {
                     viewModel.login()
                 }) {
-                    Text("Sign Up")
+                    Text("Log in")
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .padding()

@@ -6,15 +6,12 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
-class Transaction {
+struct Transaction: Codable, Identifiable {
+    @DocumentID var id:String?
     var item:String
     var cost:Float
     var type:String
-    
-    init(item:String,cost:Float,type:String){
-        self.item=item
-        self.cost=cost
-        self.type=type
-    }
+    var uid:String
 }

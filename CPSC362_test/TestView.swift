@@ -10,7 +10,10 @@ import SwiftUI
 struct TestView: View {
     @StateObject var viewModel=TestViewViewModel()
     var body: some View {
-        Form{
+        VStack{
+            List(viewModel.listItems,id:\.id){
+                Text($0.item)
+            }
             if viewModel.testBool{
                 Text(viewModel.testMsg)
                     .foregroundColor(.red)
@@ -19,7 +22,7 @@ struct TestView: View {
             Text(viewModel.testVar)
                 .foregroundColor(.green)
             Button("xyz"){
-                viewModel.testFunc(param: "xyz")
+                viewModel.testFunc(param: "dd")
             }
         }
     }

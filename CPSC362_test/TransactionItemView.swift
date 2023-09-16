@@ -13,13 +13,12 @@ struct TransactionItemView: View {
         HStack(alignment: .center){
             Text(transaction.item)
             Spacer()
-            VStack(spacing: 10){
+            VStack(alignment: .trailing, spacing: 10){
                 Text(String(format:"$%.2f",transaction.cost))
                 Text(transaction.type)
             }
         }
         .padding()
-        .border(.black)
     }
 }
 
@@ -29,7 +28,8 @@ struct TransactionItemView_Previews: PreviewProvider {
             transaction:Transaction(
                 item:"Burger",
                 cost:9.99,
-                type:"food"
+                type:"food",
+                uid: ""
             )
         )
     }

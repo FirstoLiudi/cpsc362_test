@@ -12,8 +12,14 @@ struct TransactionsView: View {
     var body: some View {
         NavigationView(){
             VStack{
-                ForEach<[Transaction], Transaction, Any>(viewModel.transactions, id:\<#Root#>.self)
+                List(viewModel.transactions,id:\.id){
+                    TransactionItemView(transaction: $0)
+                }
+                .refreshable {
+                    viewModel.getTransactions()
+                }
             }
+            .navigationTitle("Transactions")
             .toolbar{
                 NavigationLink( destination: AddTransactionView()){
                     Text("add transaction")

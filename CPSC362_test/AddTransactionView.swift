@@ -11,9 +11,6 @@ struct AddTransactionView: View{
     @StateObject var viewModel=AddTransactionViewViewModel()
     var body: some View{
         VStack{
-            Text("Add Transaction")
-                .font(.largeTitle)
-                .padding(.bottom, 20)
             TextField("Item", text: $viewModel.item)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             TextField("Cost", text: $viewModel.costStr)
@@ -22,7 +19,7 @@ struct AddTransactionView: View{
             TextField("Type", text: $viewModel.type)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             Button(action: {
-                viewModel.log()
+                viewModel.addTransaction()
             }) {
                 Text("Add")
                     .foregroundColor(.white)
@@ -34,6 +31,7 @@ struct AddTransactionView: View{
             Spacer()
         }
         .padding()
+        .navigationTitle("Add Transaction")
     }
 }
 

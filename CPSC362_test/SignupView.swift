@@ -22,7 +22,7 @@ struct SignupView: View {
                 // Simulate signup success for demonstration purposes
                 viewModel.signup()
             }) {
-                Text("Sign Up")
+                Text("Sign up")
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)
                     .padding()

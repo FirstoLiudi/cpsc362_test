@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         TabView {
-            BudgetView()
+            GraphView()
                 .tabItem {
                     Label("Budget", systemImage: "dollarsign.circle.fill")
                 }
