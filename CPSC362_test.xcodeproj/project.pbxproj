@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7AD26DF52AB5409A0029C080 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD26DF42AB5409A0029C080 /* GraphView.swift */; };
 		9A1033F42AA3AC6E00A02E95 /* CPSC362_testApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1033F32AA3AC6E00A02E95 /* CPSC362_testApp.swift */; };
 		9A1033F62AA3AC6E00A02E95 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1033F52AA3AC6E00A02E95 /* HomeView.swift */; };
 		9A1033F82AA3AC6F00A02E95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A1033F72AA3AC6F00A02E95 /* Assets.xcassets */; };
@@ -54,7 +53,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7AD26DF42AB5409A0029C080 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		9A1033F02AA3AC6E00A02E95 /* CPSC362_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPSC362_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A1033F32AA3AC6E00A02E95 /* CPSC362_testApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPSC362_testApp.swift; sourceTree = "<group>"; };
 		9A1033F52AA3AC6E00A02E95 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 				9ACE6C942AA40311001AF0D0 /* GoogleService-Info.plist */,
 				9A1033F32AA3AC6E00A02E95 /* CPSC362_testApp.swift */,
 				9A4A9E9C2AAC472000065432 /* MainView.swift */,
-				7AD26DF42AB5409A0029C080 /* GraphView.swift */,
 				9A1033F52AA3AC6E00A02E95 /* HomeView.swift */,
 				9ACE6C9D2AA40610001AF0D0 /* SignupView.swift */,
 				9A4A9EA02AAC4EC300065432 /* SignupViewViewModel.swift */,
@@ -334,7 +331,6 @@
 				9AF337972AAC8C320008956A /* TransactionItemView.swift in Sources */,
 				9A4A9E9F2AAC4B2D00065432 /* LoginViewViewModel.swift in Sources */,
 				9A1034202AA3AD0300A02E95 /* TransactionsView.swift in Sources */,
-				7AD26DF52AB5409A0029C080 /* GraphView.swift in Sources */,
 				9AF1254D2AA46FC8004A2D77 /* TestView.swift in Sources */,
 				9A4A9EA12AAC4EC300065432 /* SignupViewViewModel.swift in Sources */,
 				9A1033F62AA3AC6E00A02E95 /* HomeView.swift in Sources */,

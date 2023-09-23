@@ -18,6 +18,7 @@ struct AddTransactionView: View{
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             TextField("Type", text: $viewModel.type)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+            DatePicker("Date",selection: $viewModel.datetime)
             Button(action: {
                 viewModel.addTransaction()
             }) {

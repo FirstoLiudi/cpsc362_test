@@ -10,7 +10,6 @@ import Foundation
 
 class TransactionsViewViewModel: ObservableObject {
     @Published var transactions:[Transaction]=[]
-    var transactionsDict:[[String:Any]]=[]
     
     init(){
         getTransactions()
@@ -18,31 +17,30 @@ class TransactionsViewViewModel: ObservableObject {
     
     func getTransactions(){
         self.transactions.removeAll()
-        if let uid=Auth.auth().currentUser?.uid {
-            let db=Firestore.firestore()
-            let query=db
-                .collection("transactions")
-                .whereField("uid", isEqualTo: uid)
-            query.getDocuments() { (querySnapshot, error) in
-                if let error=error {
-                    print("Error getDocuments: \(error)")
-                }
-                else {
-                    for doc in querySnapshot!.documents {
-                        do {
-                            let transaction=try doc.data(as: Transaction.self)
-                            //print("xxx \(doc.data())")
-                            self.transactions.append(transaction)
-                        } catch {
-                            print(error)
-                        }
-                    }
-                    print("getDocument success")
-                }
-            }
-        }
-        else {
+        guard let uid=Auth.auth().currentUser?.uid else {
             print("no one is logged in???")
+            return
+        }
+        let db=Firestore.firestore()
+        let query=db
+            .collection("transactions")
+            .whereField("uid", isEqualTo: uid)
+            .order(by: "datetime",descending: true)
+        query.getDocuments() { (querySnapshot, error) in
+            if let error=error {
+                print("Error getDocuments: \(error)")
+            }
+            else {
+                for doc in querySnapshot!.documents {
+                    do {
+                        let transaction=try doc.data(as: Transaction.self)
+                        self.transactions.append(transaction)
+                    } catch {
+                        print(error)
+                    }
+                }
+                print("getDocument success")
+            }
         }
     }
 }

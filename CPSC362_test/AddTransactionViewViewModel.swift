@@ -13,6 +13,7 @@ class AddTransactionViewViewModel: ObservableObject{
     @Published var costStr:String=""
     @Published var cost:Float=0
     @Published var type:String=""
+    @Published var datetime:Date=Date()
     
     init(){}
     
@@ -36,9 +37,17 @@ class AddTransactionViewViewModel: ObservableObject{
                 "item":item,
                 "cost":cost,
                 "type":type,
+                "datetime":datetime,
                 "uid":uid
             ] as [String : Any]
-            colRef.addDocument(data: data)
+            var docRef:DocumentReference?=nil
+            docRef = colRef.addDocument(data: data){ err in
+                if let err = err {
+                    print("Error adding document: \(err)")
+                } else {
+                    print("Document added with ID: \(docRef!.documentID)")
+                }
+            }
         }
         else {
             print("no user logged in")

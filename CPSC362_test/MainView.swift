@@ -6,10 +6,32 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+
+class MainViewViewModel: ObservableObject {
+    @Published var currentUserId=""
+    private var handler:AuthStateDidChangeListenerHandle?
+    init(){
+        handler = Auth.auth().addStateDidChangeListener({ [weak self] _, user in
+            DispatchQueue.main.async {
+                self?.currentUserId = user?.uid ?? ""
+            }
+        })
+    }
+    public var isLoggedIn:Bool {
+        return Auth.auth().currentUser != nil
+    }
+}
 
 struct MainView: View {
+    @StateObject var viewModel:MainViewViewModel=MainViewViewModel()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if viewModel.isLoggedIn, !viewModel.currentUserId.isEmpty {
+            HomeView()
+        }
+        else {
+            LoginView()
+        }
     }
 }
 
