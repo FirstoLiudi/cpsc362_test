@@ -11,6 +11,11 @@ import Foundation
 class TransactionsViewViewModel: ObservableObject {
     @Published var transactions:[Transaction]=[]
     
+    @Published var type:String="All"
+    @Published var dateFrom=Date(timeIntervalSince1970: 0)
+    @Published var dateTo=Date()
+    @Published var graphType:String="Category"
+    
     init(){
         getTransactions()
     }

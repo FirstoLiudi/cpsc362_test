@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A9067D32AC5E8ED00C15A55 /* BudgetViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9067D22AC5E8ED00C15A55 /* BudgetViewViewModel.swift */; };
 		9A1033F42AA3AC6E00A02E95 /* CPSC362_testApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1033F32AA3AC6E00A02E95 /* CPSC362_testApp.swift */; };
 		9A1033F62AA3AC6E00A02E95 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1033F52AA3AC6E00A02E95 /* HomeView.swift */; };
 		9A1033F82AA3AC6F00A02E95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A1033F72AA3AC6F00A02E95 /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A9067D22AC5E8ED00C15A55 /* BudgetViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewViewModel.swift; sourceTree = "<group>"; };
 		9A1033F02AA3AC6E00A02E95 /* CPSC362_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPSC362_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A1033F32AA3AC6E00A02E95 /* CPSC362_testApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPSC362_testApp.swift; sourceTree = "<group>"; };
 		9A1033F52AA3AC6E00A02E95 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				9ACE6C9F2AA415A5001AF0D0 /* LoginView.swift */,
 				9A4A9E9E2AAC4B2D00065432 /* LoginViewViewModel.swift */,
 				9A1034212AA3AF8A00A02E95 /* BudgetView.swift */,
+				7A9067D22AC5E8ED00C15A55 /* BudgetViewViewModel.swift */,
 				9A10341D2AA3ACB800A02E95 /* SettingsView.swift */,
 				9A10341F2AA3AD0300A02E95 /* TransactionsView.swift */,
 				9AF3379A2AAC93D70008956A /* TransactionsViewViewModel.swift */,
@@ -326,6 +329,7 @@
 				9AF1254F2AA47CAB004A2D77 /* TestViewViewModel.swift in Sources */,
 				9ACE6CA02AA415A5001AF0D0 /* LoginView.swift in Sources */,
 				9A10341E2AA3ACB800A02E95 /* SettingsView.swift in Sources */,
+				7A9067D32AC5E8ED00C15A55 /* BudgetViewViewModel.swift in Sources */,
 				9AF3379B2AAC93D70008956A /* TransactionsViewViewModel.swift in Sources */,
 				9A4A9E9B2AAC364F00065432 /* AddTransactionViewViewModel.swift in Sources */,
 				9AF337972AAC8C320008956A /* TransactionItemView.swift in Sources */,

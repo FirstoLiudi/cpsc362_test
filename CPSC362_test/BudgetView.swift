@@ -10,13 +10,14 @@ import FirebaseFirestore
 import FirebaseAuth
 
 struct BudgetView: View {
-    @ObservedObject var data:DataViewModel
+    @StateObject private var viewModel:BudgetViewViewModel=BudgetViewViewModel()
     var budget:[String:Float]=Dictionary(uniqueKeysWithValues: types.map{($0,0)})
+    
     var body: some View {
         NavigationView {
             List(types,id: \.description){ type in
                 Section(type) {
-                    Text(String(format: "spent: $%.2f", data.categories[type]!))
+                    Text(String(format: "spent: $%.2f", viewModel.sum[type]!))
                     Text(String(format: "budget: $%.2f", budget[type]!))
                 }
             }
@@ -66,7 +67,7 @@ struct BudgetView_Previews: PreviewProvider {
             //    "Transportation":0,
             //    "Others":0
             //])
-            BudgetView(data: DataViewModel())
+            BudgetView()
         }
     }
 }
