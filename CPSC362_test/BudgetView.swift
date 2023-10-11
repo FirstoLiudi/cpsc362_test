@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import FirebaseFirestore
-import FirebaseAuth
 
 struct BudgetView: View {
     @StateObject private var viewModel:BudgetViewViewModel=BudgetViewViewModel()
@@ -27,7 +25,7 @@ struct BudgetView: View {
             })
             .navigationTitle("Budget")
             .toolbar{
-                NavigationLink( destination: SetBudgetView(budget: viewModel.budget)){
+                NavigationLink( destination: SetBudgetView(viewModel.budget)){
                     Text("Set budget")
                 }
             }
@@ -38,13 +36,6 @@ struct BudgetView: View {
 struct BudgetView_Previews: PreviewProvider {
     static var previews: some View {
         Group{
-            //SetBudgetView(budget: [
-            //    "Food":0,
-            //    "Entertainment":0,
-            //    "Education":0,
-            //    "Transportation":0,
-            //    "Others":0
-            //])
             BudgetView()
         }
     }

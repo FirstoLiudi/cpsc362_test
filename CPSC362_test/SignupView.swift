@@ -5,7 +5,6 @@
 //  Created by Liudi, Firsto on 9/2/23.
 //
 import SwiftUI
-import FirebaseAuth
 
 struct SignupView: View {
     @StateObject var viewModel=SignupViewViewModel()

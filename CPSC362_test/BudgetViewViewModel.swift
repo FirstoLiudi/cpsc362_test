@@ -58,28 +58,18 @@ class BudgetViewViewModel: ObservableObject{
         }
         
         let db=Firestore.firestore()
-        let query=db
-            .collection("users")
-            .whereField("uid", isEqualTo: uid)
-
-        query.getDocuments() { (querySnapshot, error) in
+        let docRef=db.collection("users").document(uid)
+        docRef.getDocument { document, error in
             if let error=error {
-                print("Error getDocuments: \(error)")
+                print(error.localizedDescription)
             }
-            else {
-                print("number of budget doc: ",querySnapshot!.documents.count)
-                
-                for doc in querySnapshot!.documents {
-                    do{
-                        let user=try doc.data(as: User.self)
-                        self.budget=user.budget
-                        
-                    } catch {
-                        print("error converting data")
-                    }
+            do {
+                if let budget = try document?.data(as: User.self).budget {
+                    self.budget=budget
+                    print("getBudget success")
                 }
-                
-                print(self.budget)
+            } catch {
+                print("getBudget error: codable conversion")
             }
         }
     }

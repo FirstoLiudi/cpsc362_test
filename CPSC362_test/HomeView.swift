@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import FirebaseAuth
-import FirebaseFirestore
 
 struct HomeView: View {
     var body: some View {

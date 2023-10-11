@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7A6E6B852AD66965004B9CCD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6E6B842AD66965004B9CCD /* User.swift */; };
+		7A6E6B872AD760C5004B9CCD /* SetBudgetViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6E6B862AD760C5004B9CCD /* SetBudgetViewViewModel.swift */; };
 		7A8AD1D72AD27C1B00FEA5D0 /* SetBudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8AD1D62AD27C1B00FEA5D0 /* SetBudgetView.swift */; };
 		7A9067D32AC5E8ED00C15A55 /* BudgetViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9067D22AC5E8ED00C15A55 /* BudgetViewViewModel.swift */; };
 		9A1033F42AA3AC6E00A02E95 /* CPSC362_testApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1033F32AA3AC6E00A02E95 /* CPSC362_testApp.swift */; };
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		7A6E6B842AD66965004B9CCD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7A6E6B862AD760C5004B9CCD /* SetBudgetViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBudgetViewViewModel.swift; sourceTree = "<group>"; };
 		7A8AD1D62AD27C1B00FEA5D0 /* SetBudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBudgetView.swift; sourceTree = "<group>"; };
 		7A9067D22AC5E8ED00C15A55 /* BudgetViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewViewModel.swift; sourceTree = "<group>"; };
 		9A1033F02AA3AC6E00A02E95 /* CPSC362_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPSC362_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +152,7 @@
 				9A1034212AA3AF8A00A02E95 /* BudgetView.swift */,
 				7A9067D22AC5E8ED00C15A55 /* BudgetViewViewModel.swift */,
 				7A8AD1D62AD27C1B00FEA5D0 /* SetBudgetView.swift */,
+				7A6E6B862AD760C5004B9CCD /* SetBudgetViewViewModel.swift */,
 				9A10341D2AA3ACB800A02E95 /* SettingsView.swift */,
 				9A10341F2AA3AD0300A02E95 /* TransactionsView.swift */,
 				9AF3379A2AAC93D70008956A /* TransactionsViewViewModel.swift */,
@@ -330,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9ACE6C9E2AA40610001AF0D0 /* SignupView.swift in Sources */,
+				7A6E6B872AD760C5004B9CCD /* SetBudgetViewViewModel.swift in Sources */,
 				9A4A9E9D2AAC472000065432 /* MainView.swift in Sources */,
 				9AF337992AAC8CD80008956A /* Transaction.swift in Sources */,
 				9AF1254F2AA47CAB004A2D77 /* TestViewViewModel.swift in Sources */,
