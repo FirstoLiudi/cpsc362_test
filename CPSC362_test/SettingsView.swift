@@ -15,7 +15,7 @@ struct SettingsView: View {
         NavigationView {
             List{
                 Section("Account"){
-                    Toggle("Dark Mode", isOn: $isDarkMode)
+                    //Toggle("Dark Mode", isOn: $isDarkMode)
                     Button("Log out") {
                         do{
                             try Auth.auth().signOut()

@@ -6,14 +6,48 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
+import FirebaseAuth
 import Charts
 
+func randomDouble()->Double{
+    let roundedString = String(format: "%.2f", Double.random(in: 100..<700))
+    return Double(roundedString)!
+}
+
+let item:String="HamBurger"
+let cost:Double=12
+let type:String="Food"
+let datetime:Date=Date()
+func f(){
+    let uid="vLX8IuYanAf2TUg7yjfqG1BR98y1"
+    
+    Firestore.firestore().collection("users").document(uid).setData([
+        "budget":Dictionary(uniqueKeysWithValues: types.map{($0,0)}),
+        "uid":uid
+    ])
+    print("User created: \(uid)")
+}
+
+var testEntry:[User]=[]
+
 struct TestView: View {
-    @StateObject var viewModel=TestViewViewModel()
+    //@StateObject var viewModel=BudgetViewViewModel()
+    @State var testBool:Bool=false
     var body: some View {
-        Button("test") {
-            viewModel.g2()
+        VStack{
+            Button("test"){
+                f()
+            }
+            Button("show uid"){
+                guard let uid=Auth.auth().currentUser?.uid else {
+                    print("no uid")
+                    return
+                }
+                print(uid)
+            }
         }
+        .alert("test alert", isPresented: $testBool) {}
     }
 }
 

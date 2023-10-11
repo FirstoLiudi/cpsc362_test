@@ -52,19 +52,15 @@ struct TransactionsView: View {
                                 Text($0).tag($0)
                             }
                         }
-                        DatePicker("From",selection: $viewModel.dateFrom)
-                        DatePicker("To",selection: $viewModel.dateTo)
                     }
                     
                     Section("Transactions"){
                         ForEach(viewModel.transactions){
-                            if(viewModel.dateFrom<=$0.datetime && $0.datetime<=viewModel.dateTo){
-                                if(viewModel.type=="All") {
+                            if(viewModel.type=="All") {
+                                TransactionItemView(transaction: $0)
+                            } else {
+                                if($0.type==viewModel.type) {
                                     TransactionItemView(transaction: $0)
-                                } else {
-                                    if($0.type==viewModel.type) {
-                                        TransactionItemView(transaction: $0)
-                                    }
                                 }
                             }
                         }

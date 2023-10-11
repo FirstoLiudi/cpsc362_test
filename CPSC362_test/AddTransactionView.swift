@@ -10,14 +10,19 @@ import SwiftUI
 struct AddTransactionView: View{
     @StateObject var viewModel=AddTransactionViewViewModel()
     var body: some View{
-        VStack{
+        Form{
             TextField("Item", text: $viewModel.item)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             TextField("Cost", text: $viewModel.costStr)
                 .keyboardType(.numberPad)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-            TextField("Type", text: $viewModel.type)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+            Picker("Type", selection: $viewModel.type) {
+                ForEach(types,id: \.description){
+                    Text($0).tag($0)
+                }
+            }
+            .pickerStyle(.automatic)
+            
             DatePicker("Date",selection: $viewModel.datetime)
             Button(action: {
                 viewModel.addTransaction()
@@ -31,7 +36,7 @@ struct AddTransactionView: View{
             }
             Spacer()
         }
-        .padding()
+        .alert(viewModel.alertMessage, isPresented: $viewModel.isAlert) {}
         .navigationTitle("Add Transaction")
     }
 }

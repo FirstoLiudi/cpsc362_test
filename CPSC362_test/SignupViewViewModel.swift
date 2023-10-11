@@ -6,6 +6,7 @@
 //
 
 import FirebaseAuth
+import FirebaseFirestore
 import Foundation
 
 class SignupViewViewModel: ObservableObject{
@@ -27,6 +28,10 @@ class SignupViewViewModel: ObservableObject{
                 // User account was successfully created
                 self.isError=false
                 self.message="user created: \(self.email)"
+                Firestore.firestore().collection("users").document(user.uid).setData([
+                    "budget":Dictionary(uniqueKeysWithValues: types.map{($0,0)}),
+                    "uid":authResult!.user.uid
+                ])
                 print("User created: \(user.uid)")
             }
         }

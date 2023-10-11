@@ -11,7 +11,7 @@ import FirebaseFirestoreSwift
 struct Transaction: Codable, Identifiable {
     @DocumentID var id:String?
     var item:String
-    var cost:Float
+    var cost:Double
     var type:String
     var datetime:Date
     var uid:String

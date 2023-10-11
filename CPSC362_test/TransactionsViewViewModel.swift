@@ -10,10 +10,9 @@ import Foundation
 
 class TransactionsViewViewModel: ObservableObject {
     @Published var transactions:[Transaction]=[]
+    //@Published var sum:[String:Double]=Dictionary(uniqueKeysWithValues: types.map{($0,0)})
     
     @Published var type:String="All"
-    @Published var dateFrom=Date(timeIntervalSince1970: 0)
-    @Published var dateTo=Date()
     @Published var graphType:String="Category"
     
     init(){
@@ -22,6 +21,7 @@ class TransactionsViewViewModel: ObservableObject {
     
     func getTransactions(){
         self.transactions.removeAll()
+        //for type in sum.keys { sum[type]=0 }
         guard let uid=Auth.auth().currentUser?.uid else {
             print("no one is logged in???")
             return
@@ -40,6 +40,7 @@ class TransactionsViewViewModel: ObservableObject {
                     do {
                         let transaction=try doc.data(as: Transaction.self)
                         self.transactions.append(transaction)
+                        //self.sum[transaction.type]!+=transaction.cost
                     } catch {
                         print(error)
                     }

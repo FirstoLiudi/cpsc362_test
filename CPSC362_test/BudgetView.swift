@@ -11,48 +11,26 @@ import FirebaseAuth
 
 struct BudgetView: View {
     @StateObject private var viewModel:BudgetViewViewModel=BudgetViewViewModel()
-    var budget:[String:Float]=Dictionary(uniqueKeysWithValues: types.map{($0,0)})
+    var budget:[String:Double]=Dictionary(uniqueKeysWithValues: types.map{($0,0)})
     
     var body: some View {
         NavigationView {
             List(types,id: \.description){ type in
                 Section(type) {
                     Text(String(format: "spent: $%.2f", viewModel.sum[type]!))
-                    Text(String(format: "budget: $%.2f", budget[type]!))
+                    Text(String(format: "budget: $%.2f", viewModel.budget[type]!))
                 }
             }
+            .refreshable(action: {
+                viewModel.getSum()
+                viewModel.getBudget()
+            })
             .navigationTitle("Budget")
             .toolbar{
-                NavigationLink( destination: SetBudgetView(budget: budget)){
+                NavigationLink( destination: SetBudgetView(budget: viewModel.budget)){
                     Text("Set budget")
                 }
             }
-        }
-    }
-}
-struct SetBudgetView: View {
-    @State var budget:[String:Float]
-    var body: some View {
-        Form{
-            ForEach(types,id: \.description) { type in
-                Section(type){
-                    TextField(type, value: $budget[type], formatter: NumberFormatter())
-                        .keyboardType(.decimalPad)
-                }
-            }
-        }
-        .navigationTitle("Set budget")
-        Button("Set budget") {
-            guard let uid=Auth.auth().currentUser?.uid else {
-                print("set budget fail")
-                return
-            }
-            let db=Firestore.firestore()
-            let colRef=db.collection("budget")
-            var data:[String:Any]=budget
-            data["uid"]=uid
-            colRef.addDocument(data:budget)
-            print("set document done")
         }
     }
 }

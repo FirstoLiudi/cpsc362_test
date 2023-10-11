@@ -11,7 +11,7 @@ import Foundation
 
 struct ListItem{
     var transactions:[Transaction]=[]
-    var spent:Float=0
+    var spent:Double=0
     mutating func add(transaction:Transaction){
         self.transactions.append(transaction)
         self.spent+=transaction.cost
@@ -22,7 +22,7 @@ class TestViewViewModel: ObservableObject{
     
     init(){}
     
-    func g(type:String,cost:Float){
+    func g(type:String,cost:Double){
         //add an entry to budget table
         let colRef=Firestore.firestore().collection("budgets")
         guard let uid=Auth.auth().currentUser?.uid else {return}

@@ -9,14 +9,15 @@ import FirebaseFirestore
 import Foundation
 
 class BudgetViewViewModel: ObservableObject{
-    @Published var sum:[String:Float]=Dictionary(uniqueKeysWithValues: types.map{($0,0)})
-    @Published var total=0
+    @Published var sum:[String:Double]=Dictionary(uniqueKeysWithValues: types.map{($0,0)})
+    @Published var budget:[String:Double]=Dictionary(uniqueKeysWithValues: types.map{($0,0)})
     
     init(){
+        getSum()
         getBudget()
     }
     
-    func getBudget(){
+    func getSum(){
         for type in sum.keys { sum[type]=0 }
         guard let uid=Auth.auth().currentUser?.uid else {
             print("no one is logged in???")
@@ -35,7 +36,6 @@ class BudgetViewViewModel: ObservableObject{
                 for doc in querySnapshot!.documents {
                     do {
                         let transaction=try doc.data(as: Transaction.self)
-                        //print("xxx \(doc.data())")
                         if self.sum.keys.contains(transaction.type) {
                             self.sum[transaction.type]!+=transaction.cost
                         }
@@ -43,10 +43,43 @@ class BudgetViewViewModel: ObservableObject{
                             self.sum["Others"]!+=transaction.cost
                         }
                     } catch {
-                        print(error)
+                        print("error converting data")
                     }
                 }
                 print("getBudget success")
+            }
+        }
+    }
+    
+    func getBudget(){
+        guard let uid=Auth.auth().currentUser?.uid else {
+            print("no one is logged in???")
+            return
+        }
+        
+        let db=Firestore.firestore()
+        let query=db
+            .collection("users")
+            .whereField("uid", isEqualTo: uid)
+
+        query.getDocuments() { (querySnapshot, error) in
+            if let error=error {
+                print("Error getDocuments: \(error)")
+            }
+            else {
+                print("number of budget doc: ",querySnapshot!.documents.count)
+                
+                for doc in querySnapshot!.documents {
+                    do{
+                        let user=try doc.data(as: User.self)
+                        self.budget=user.budget
+                        
+                    } catch {
+                        print("error converting data")
+                    }
+                }
+                
+                print(self.budget)
             }
         }
     }
